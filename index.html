@@ -404,8 +404,8 @@ const bank=[
  const btn=$('parentSend');btn.disabled=true;btn.textContent='جارٍ إرسال الملاحظة...';
  const payload={type:'parentMessage',messageType:type,parentName:name,note:note};
  fetch(RESULTS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
- .then(()=>{alert(''شكرًا لتواصلك، تم إرسال ملاحظتك 🌷.');$('pnote').value='';})
- .catch(()=>alert('تعذر إرسال الملاحظة. تحققي من الاتصال وحاولي مجددًا.'))
+ .then(()=>{alert('شكرًا لتواصلك، تم إرسال ملاحظتك 🌷.');$('pnote').value='';})
+ .catch(()=>alert('تعذر إرسال الملاحظة. تحققي من الاتصال وحاولي مجددًا'))
  .finally(()=>{btn.disabled=false;btn.textContent='إرسال الملاحظة للمعلمة'});
 }
 function renderCert(){let x=lastCompleted&&lastCompleted.pct>=70?lastCompleted:null;$('certBody').innerHTML=x?'<div class="certificate"><h2>شهادة إنجاز وتدريب</h2><p>تُمنح للطالبة</p><h1>'+esc(x.name)+'</h1><p>لإتمام جولة '+esc(x.course)+' في '+esc(x.topic)+'</p><h2>النتيجة: '+x.pct+'%</h2><p>إعداد المعلمة: آمنه القرني</p><p>ثانوية ثريبان – إدارة تعليم مكة المكرمة</p><p>'+esc(x.date)+'</p></div><button class="no-print" onclick="window.print()">طباعة / حفظ PDF</button>':'تظهر شهادة الطالبة بعد إكمال اختبار في هذه الجلسة بنتيجة 70% فأكثر.'}topics();
