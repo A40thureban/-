@@ -404,7 +404,7 @@ const bank=[
  const btn=$('parentSend');btn.disabled=true;btn.textContent='جارٍ إرسال الملاحظة...';
  const payload={type:'parentMessage',messageType:type,parentName:name,note:note};
  fetch(RESULTS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
- .then(()=>{alert('تم إرسال الطلب. للتأكد من حفظ الملاحظة، راجعي جدول Google Sheets.');$('pnote').value='';})
+ .then(()=>{alert(''شكرًا لتواصلك، تم إرسال ملاحظتك 🌷.');$('pnote').value='';})
  .catch(()=>alert('تعذر إرسال الملاحظة. تحققي من الاتصال وحاولي مجددًا.'))
  .finally(()=>{btn.disabled=false;btn.textContent='إرسال الملاحظة للمعلمة'});
 }
